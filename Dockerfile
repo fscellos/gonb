@@ -99,7 +99,7 @@ RUN rm -rf ${NOTEBOOKS} && mkdir -p ${NOTEBOOKS} && \
 # Make tutorial available by default, so it can be used, and include the latest
 # GoNB version locally.
 # USER $NB_USER
-# WORKDIR ${NOTEBOOKS}
+WORKDIR ${NOTEBOOKS}
 COPY ./FormationGo/tutorial.ipynb ${NOTEBOOKS}/tutorial.ipynb
 
 #######################################################################################################
