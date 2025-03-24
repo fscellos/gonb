@@ -100,7 +100,7 @@ ENV NOTEBOOKS=/notebooks
 # USER $NB_USER
 # WORKDIR ${NOTEBOOKS}
 RUN ls
-# COPY --link ./FormationGo/tutorial.ipynb ${NOTEBOOKS}
+COPY --link ./FormationGo/tutorial.ipynb ${NOTEBOOKS}
 
 #######################################################################################################
 # Finishing touches
