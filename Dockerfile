@@ -81,7 +81,7 @@ RUN go install golang.org/x/tools/cmd/goimports@latest && \
 #   to rebuild the gonb part.
 ARG CACHEBUST=2
 WORKDIR ${HOME}
-RUN git clone 'https://github.com/janpfeifer/gonb.git'
+RUN git clone 'https://github.com/fscellos/gonb.git'
 WORKDIR ${HOME}/gonb
 RUN go install . && \
     gonb --install
