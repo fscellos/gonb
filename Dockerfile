@@ -99,7 +99,6 @@ RUN rm -rf ${NOTEBOOKS} && mkdir -p ${NOTEBOOKS} && mkdir -p ${NOTEBOOKS}/host &
 # GoNB version locally.
 # USER $NB_USER
 # WORKDIR ${NOTEBOOKS}
-RUN ls
 COPY --link ./FormationGo/tutorial.ipynb ${NOTEBOOKS}
 
 #######################################################################################################
@@ -112,7 +111,7 @@ COPY --link ./FormationGo/tutorial.ipynb ${NOTEBOOKS}
 
 # Start-up.
 USER root
-WORKDIR ${NOTEBOOKS}
+# WORKDIR ${NOTEBOOKS}
 
 # Script that checks for `/root/autostart/autostart.sh` (mounted readonly) and then starts JupyterLab.
 COPY cmd/check_and_run_autostart.sh /usr/local/bin/
