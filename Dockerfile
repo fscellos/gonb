@@ -99,7 +99,8 @@ ENV NOTEBOOKS=/notebooks
 # GoNB version locally.
 # USER $NB_USER
 # WORKDIR ${NOTEBOOKS}
-COPY --link ./FormationGo/tutorial.ipynb ${NOTEBOOKS}
+ls
+# COPY --link ./FormationGo/tutorial.ipynb ${NOTEBOOKS}
 
 #######################################################################################################
 # Finishing touches
