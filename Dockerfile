@@ -30,6 +30,12 @@ ARG BASE_IMAGE=quay.io/jupyter/base-notebook
 ARG BASE_TAG=latest
 FROM ${BASE_IMAGE}:${BASE_TAG}
 
+USER root
+RUN pip install --force-reinstall jupyter_contrib_nbextensions
+RUN pip install "notebook<7.0"
+RUN jupyter contrib nbextension install --system
+RUN jupyter nbextensions_configurator enable --system
+
 # Update apt and install basic utils that may be helpful for users to install their own dependencies.
 USER root
 RUN apt update --yes
