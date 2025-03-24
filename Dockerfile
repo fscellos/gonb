@@ -89,20 +89,20 @@ RUN go install . && \
 #######################################################################################################
 # Prepare directory where Jupyter Lab will run, with the notebooks we want to demo
 ####################################################################################################### \
-USER root
-ENV NOTEBOOKS=/notebooks
+# USER root
+# ENV NOTEBOOKS=/notebooks
 
-# Create directory where notebooks will be stored, where Jupyter Lab will run by default.
-RUN rm -rf ${NOTEBOOKS} && \
-    mkdir -p ${NOTEBOOKS}/host && \
-    chown ${NB_USER}:users ${NOTEBOOKS} ${NOTEBOOKS}/host
+# # Create directory where notebooks will be stored, where Jupyter Lab will run by default.
+# RUN rm -rf ${NOTEBOOKS} && \
+#     mkdir -p ${NOTEBOOKS}/host && \
+#     chown ${NB_USER}:users ${NOTEBOOKS} ${NOTEBOOKS}/host
 
 
-# Make tutorial available by default, so it can be used, and include the latest
-# GoNB version locally.
-USER $NB_USER
-WORKDIR ${NOTEBOOKS}
-COPY --link ./examples/tutorial.ipynb ${NOTEBOOKS}
+# # Make tutorial available by default, so it can be used, and include the latest
+# # GoNB version locally.
+# USER $NB_USER
+# WORKDIR ${NOTEBOOKS}
+# COPY --link ./examples/tutorial.ipynb ${NOTEBOOKS}
 
 #######################################################################################################
 # Finishing touches
