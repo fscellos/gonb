@@ -112,7 +112,7 @@ COPY ./FormationGo/tutorial.ipynb ${NOTEBOOKS}/tutorial.ipynb
 
 # Start-up.
 USER root
-# WORKDIR ${NOTEBOOKS}
+WORKDIR ${NOTEBOOKS}
 
 # Script that checks for `/root/autostart/autostart.sh` (mounted readonly) and then starts JupyterLab.
 COPY cmd/check_and_run_autostart.sh /usr/local/bin/
