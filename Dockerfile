@@ -93,13 +93,14 @@ USER root
 ENV NOTEBOOKS=/notebooks
 
 # Create directory where notebooks will be stored, where Jupyter Lab will run by default.
-RUN rm -rf ${NOTEBOOKS} && mkdir -p ${NOTEBOOKS} && mkdir -p ${NOTEBOOKS}/host && chown ${NB_USER}:users ${NOTEBOOKS} ${NOTEBOOKS}/host
+RUN rm -rf ${NOTEBOOKS} && mkdir -p ${NOTEBOOKS} && \ 
+    mkdir -p ${NOTEBOOKS}/host && chown ${NB_USER}:users ${NOTEBOOKS} ${NOTEBOOKS}/host
 
 # Make tutorial available by default, so it can be used, and include the latest
 # GoNB version locally.
 # USER $NB_USER
 # WORKDIR ${NOTEBOOKS}
-COPY --link ./FormationGo/tutorial.ipynb ${NOTEBOOKS}
+COPY ./FormationGo/tutorial.ipynb ${NOTEBOOKS}/tutorial.ipynb
 
 #######################################################################################################
 # Finishing touches
