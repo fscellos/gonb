@@ -109,8 +109,8 @@ COPY --link ./examples/tutorial.ipynb ${NOTEBOOKS}
 #######################################################################################################
 
 # Clean up space used by apt.
-USER root
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+# USER root
+# RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Start-up.
 USER root
